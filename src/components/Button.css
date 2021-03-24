@@ -24,6 +24,15 @@
   transition: all 0.3s ease-out;
 }
 
+.btn-outline {
+  background-color: rgb(17, 131, 224);
+  color: #fff;
+  padding: 8px 20px;
+  border: 2px solid rgb(17, 131, 224);
+  transition: all 0.3s ease-out;
+  margin: 20px;
+}
+
 .btn--medium {
   padding: 8px 20px;
   font-size: 18px;
