@@ -5,7 +5,6 @@ import TextField from "material-ui/TextField";
 import PasswordStr from "./PasswordStr";
 import "../../App.css";
 
-
 const SignUpForm = ({
   history,
   onSubmit,
@@ -16,7 +15,7 @@ const SignUpForm = ({
   btnTxt,
   type,
   pwMask,
-  onPwChange
+  onPwChange,
 }) => {
   return (
     <div className="loginBox">
@@ -51,14 +50,19 @@ const SignUpForm = ({
         <div className="pwStrRow">
           {score >= 1 && (
             <div>
-              <PasswordStr score={score} /> 
-              <FlatButton 
-                className="pwShowHideBtn" 
-                label={btnTxt} onClick={pwMask} 
-                style={{position: 'relative', left: '50%', transform: 'translateX(-50%)'}} 
+              <PasswordStr score={score} />
+              <FlatButton
+                className="pwShowHideBtn"
+                label={btnTxt}
+                onClick={pwMask}
+                style={{
+                  position: "relative",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                }}
               />
             </div>
-            )} 
+          )}
         </div>
         <TextField
           type={type}

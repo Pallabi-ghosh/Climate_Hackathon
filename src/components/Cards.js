@@ -1,269 +1,489 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Cards.css";
 import { Button } from "./Button";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function Cards() {
+  const [nextCard, setNextCard] = useState(false);
   return (
     <div className="cards">
+      <h1>Focus Group Discussion!</h1>
+      <ol class="faq-list" data-aos="fade-up" data-aos-delay="100">
+        <h2>Instruction for the interviewer</h2>
+        <li>
+          <div
+            data-bs-toggle="collapse"
+            href="#faq2"
+            class="collapsed question"
+          >
+            Thank the informants for participating in interview.
+          </div>
+        </li>
+
+        <li>
+          <div
+            data-bs-toggle="collapse"
+            href="#faq3"
+            class="collapsed question"
+          >
+            Explain the objectives and expectations of the interview.
+          </div>
+        </li>
+
+        <li>
+          <div
+            data-bs-toggle="collapse"
+            href="#faq4"
+            class="collapsed question"
+          >
+            Outline the session and the amount of time the interview will take.
+          </div>
+        </li>
+
+        <li>
+          <div
+            data-bs-toggle="collapse"
+            href="#faq5"
+            class="collapsed question"
+          >
+            Obtain informed consent to record the interview and/or take
+            pictures.
+          </div>
+        </li>
+      </ol>
+      <hr></hr>
+      <div>
+        <h2>Please fill out the form</h2>
+      </div>
+      <div className="container translate-btn" data-aos="fade-up">
+        <Button
+          className="btn"
+          buttonStyle="btn-outline"
+          buttonSize="btn--small"
+        >
+          Translate
+        </Button>
+      </div>
       <h1>Focus Group Discussion Form</h1>
       <div className="cards__container">
         <div className="cards__wrapper">
           <ul className="cards__items">
             <section id="faq" class="faq section-bg">
-              <div class="section-title">
-                <p>Form 1 : (Save the details to Database)</p>
-              </div>
-              <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
-                <li>
-                  <div class="collapsed question" href="#faq1">
-                    Geographic Location:
+              {!nextCard ? (
+                <div>
+                  <div class="section-title">
+                    <h2>Basic information</h2>
                   </div>
-                  <div class="collapsed question" href="#faq1">
-                    Name (optional):
-                  </div>
-                </li>
-              </ul>
-              <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
-                <li>
-                  <div class="collapsed question" href="#faq1">
-                    Interview date:
-                  </div>
-                  <div class="collapsed question" href="#faq1">
-                    Place of interview:
-                  </div>
-                </li>
-              </ul>
-              <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
-                <li>
-                  <div class="collapsed question" href="#faq1">
-                    Gender:
-                  </div>
-                  <div class="collapsed question" href="#faq1">
-                    Age:
-                  </div>
-                  <div class="collapsed question" href="#faq1">
-                    Translation necessary for the interview: Yes No
-                  </div>
-                </li>
-              </ul>
-              <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                  <p>Form 2 : Display the below contents ..Just Display</p>
-                </div>
-
-                <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
-                  <h3>Introduction</h3>
-                  <hr></hr>
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      href="#faq2"
-                      class="collapsed question"
-                    >
-                      1.Thank the informants for participating in interview.
-                    </div>
-                  </li>
-
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      href="#faq3"
-                      class="collapsed question"
-                    >
-                      2.Explain the objectives and expectations of the
-                      interview.
-                    </div>
-                  </li>
-
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      href="#faq4"
-                      class="collapsed question"
-                    >
-                      3.Outline the session and the amount of time the interview
-                      will take.
-                    </div>
-                  </li>
-
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      href="#faq5"
-                      class="collapsed question"
-                    >
-                      4.Obtain informed consent to record the interview and/or
-                      take pictures.
-                    </div>
-                  </li>
-                </ul>
-                <Button
-                  className="btn"
-                  buttonStyle="btn-outline"
-                  buttonSize="btn--small"
-                >
-                  Translate
-                </Button>
-              </div>
-              <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                  <p>Form 3 : Discussion Questions</p>
-                </div>
-
-                <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      class="collapsed question"
-                      href="#faq1"
-                    >
-                      What are the main differences in your roles and
-                      responsibilities now, comparedto before the crisis?
-                    </div>
-                    <div className="input-areas">
-                      <form>
-                        <input
-                          className="body-input"
-                          name="answers"
-                          type="input"
-                          placeholder="Your answers "
+                  <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
+                    <li>
+                      <div className="collapsed question" href="#faq1">
+                        <label htmlFor="name">Name (optional):</label>
+                        <input type="text" placeholder="Your name..." />
+                      </div>
+                      <div className="collapsed" href="#faq1">
+                        <label>Geographic Location:</label>
+                        <select name="country" id="country">
+                          <option value="">Select your country</option>
+                          <option value="dk">Denmark</option>
+                          <option value="se">Sweden</option>
+                          <option value="no">Norway</option>
+                          <option value="fi">Finland</option>
+                        </select>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul
+                    className="faq-list"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
+                    <li>
+                      <div className="collapsed question" href="#faq1">
+                        <label htmlFor="date">Interview date:</label>
+                        <DatePicker
+                          required
+                          className="date"
+                          name="deadline"
+                          minDate={new Date()}
+                          placeholderText="Date"
                         />
-                      </form>
+                      </div>
+                      <div className="collapsed question" href="#faq1">
+                        <label htmlFor="place">Place of interview:</label>
+                        <input
+                          type="text"
+                          placeholder="Place of interview..."
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                  <ul
+                    className="faq-list"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
+                    <li>
+                      <div className="collapsed question" href="#faq1">
+                        <label>Gender:</label>
+                        <label for="male">Male</label>
+                        <input
+                          type="radio"
+                          id="male"
+                          name="gender"
+                          value="male"
+                        />
+                        <label for="female">Male</label>
+                        <input
+                          type="radio"
+                          id="female"
+                          name="gender"
+                          value="female"
+                        />
+                        <label for="other">Other</label>
+                        <input
+                          type="radio"
+                          id="other"
+                          name="gender"
+                          value="other"
+                        />
+                      </div>
+                      <div class="collapsed question" href="#faq1">
+                        <label htmlFor="age">Age:</label>
+                        <input type="number" min="0" />
+                      </div>
+                      <div class="collapsed question" href="#faq1">
+                        <label>Translation necessary for the interview:</label>
+                        <label for="yes">Yes</label>
+                        <input
+                          type="radio"
+                          id="yes"
+                          name="translation"
+                          value="yes"
+                        />
+                        <label for="no">No</label>
+                        <input
+                          type="radio"
+                          id="no"
+                          name="translation"
+                          value="no"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="container" data-aos="fade-up">
+                    <div class="section-title">
+                      <h2>Discussion Questions</h2>
                     </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                  <p>Form 4 : Access to Resources</p>
+
+                    <ul
+                      class="faq-list"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                    >
+                      <li>
+                        <div
+                          data-bs-toggle="collapse"
+                          class="collapsed question"
+                          href="#faq1"
+                        >
+                          <p>
+                            What are the main differences in your roles and
+                            responsibilities now, compared to before the crisis?
+                          </p>
+                        </div>
+                        <div className="input-areas">
+                          <input
+                            type="text"
+                            // className="body-input"
+                            name="answers"
+                            placeholder="Your answer here..."
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="container_collapse" data-aos="fade-up">
+                    <div class="section-title">
+                      <h2>Access to Resources</h2>
+                    </div>
+
+                    <ul
+                      class="faq-list"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                    >
+                      <p>Resources : Yes or No</p>
+                      <li>
+                        <div
+                          data-bs-toggle="collapse"
+                          class="collapsed question"
+                          href="#faq1"
+                        >
+                          <label>Water: </label>
+                          <label type="yes">Yes</label>
+                          <input
+                            type="radio"
+                            id="yes"
+                            name="water"
+                            value="yes"
+                          />
+                          <label type="yes" for="no">
+                            No
+                          </label>
+                          <input
+                            type="radio"
+                            id="yes"
+                            name="water"
+                            value="no"
+                          />
+                        </div>
+                        <div
+                          data-bs-toggle="collapse"
+                          class="collapsed question"
+                          href="#faq1"
+                        >
+                          <label>Food: </label>
+                          <label type="yes" for="yes">
+                            Yes
+                          </label>
+                          <input
+                            type="radio"
+                            id="yes"
+                            name="food"
+                            value="yes"
+                          />
+                          <label type="yes" for="no">
+                            No
+                          </label>
+                          <input type="radio" id="yes" name="food" value="no" />
+                        </div>
+                        <div
+                          data-bs-toggle="collapse"
+                          class="collapsed question"
+                          href="#faq1"
+                        >
+                          <label>Clothes: </label>
+                          <label type="yes" for="yes">
+                            Yes
+                          </label>
+                          <input
+                            type="radio"
+                            id="yes"
+                            name="clothes"
+                            value="yes"
+                          />
+                          <label type="yes">No</label>
+                          <input
+                            type="radio"
+                            id="yes"
+                            name="clothes"
+                            value="no"
+                          />
+                        </div>
+                        <div
+                          data-bs-toggle="collapse"
+                          class="collapsed question"
+                          href="#faq1"
+                        >
+                          <label>NFI Distributions: </label>
+                          <label type="yes">Yes</label>
+                          <input type="radio" id="yes" name="nfi" value="yes" />
+                          <label type="yes">No</label>
+                          <input type="radio" id="yes" name="nfi" value="no" />
+                        </div>
+                        <div
+                          data-bs-toggle="collapse"
+                          class="collapsed question"
+                          href="#faq1"
+                        >
+                          <label>Health Services: </label>
+                          <label type="yes">Yes</label>
+                          <input
+                            type="radio"
+                            id="yes"
+                            name="health"
+                            value="yes"
+                          />
+                          <label type="yes">No</label>
+                          <input
+                            type="radio"
+                            id="yes"
+                            name="health"
+                            value="no"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button onClick={() => setNextCard(true)}>Next page</button>
                 </div>
+              ) : (
+                <div>
+                  <div class="container" data-aos="fade-up">
+                    <div class="section-title">
+                      <h2>Additional Questions</h2>
+                    </div>
 
-                <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
-                  <p>Resources :  Yes or No</p>
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      class="collapsed question"
-                      href="#faq1"
+                    <ul
+                      class="faq-list"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
                     >
-                      Water :
-                    </div>
-                    <div
-                      data-bs-toggle="collapse"
-                      class="collapsed question"
-                      href="#faq1"
-                    >
-                      Food :
-                    </div>
-                    <div
-                      data-bs-toggle="collapse"
-                      class="collapsed question"
-                      href="#faq1"
-                    >
-                      Clothes :
-                    </div>
-                    <div
-                      data-bs-toggle="collapse"
-                      class="collapsed question"
-                      href="#faq1"
-                    >
-                      NFI Distributions :
-                    </div>
-                    <div
-                      data-bs-toggle="collapse"
-                      class="collapsed question"
-                      href="#faq1"
-                    >
-                      Health Services :
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                  <p>
-                    Form 5 : Additional Questions (Store all the responses in
-                    database)
-                  </p>
+                      <li>
+                        <div
+                          data-bs-toggle="collapse"
+                          class="collapsed question"
+                          href="#faq1"
+                        >
+                          <p>
+                            {" "}
+                            How are food items and non-food items accessed and
+                            controlled?{" "}
+                          </p>
+                          <div className="input-areas">
+                            <input
+                              type="text"
+                              // className="body-input"
+                              name="answers"
+                              placeholder="Your answer here..."
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div
+                          data-bs-toggle="collapse"
+                          href="#faq2"
+                          class="collapsed question"
+                        >
+                          <p>
+                            What has changed since the crisis happened?{" "}
+                            <i class="bi bi-chevron-down icon-show"></i>
+                            <i class="bi bi-chevron-up icon-close"></i>
+                          </p>
+
+                          <div className="input-areas">
+                            <input
+                              type="text"
+                              // className="body-input"
+                              name="answers"
+                              placeholder="Your answer here..."
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div
+                          data-bs-toggle="collapse"
+                          href="#faq3"
+                          class="collapsed question"
+                        >
+                          <p>
+                            What are the primary needs?{" "}
+                            <i class="bi bi-chevron-down icon-show"></i>
+                            <i class="bi bi-chevron-up icon-close"></i>
+                          </p>
+                          <div className="input-areas">
+                            <input
+                              type="text"
+                              // className="body-input"
+                              name="answers"
+                              placeholder="Your answer here..."
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div
+                          data-bs-toggle="collapse"
+                          href="#faq4"
+                          class="collapsed question"
+                        >
+                          <p>
+                            What are the different vulnerabilities?{" "}
+                            <i class="bi bi-chevron-down icon-show"></i>
+                            <i class="bi bi-chevron-up icon-close"></i>
+                          </p>
+
+                          <div className="input-areas">
+                            <input
+                              type="text"
+                              // className="body-input"
+                              name="answers"
+                              placeholder="Your answer here..."
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div
+                          data-bs-toggle="collapse"
+                          href="#faq5"
+                          class="collapsed question"
+                        >
+                          <p>
+                            What are yours different skills and capacities?
+                            <i class="bi bi-chevron-down icon-show"></i>
+                            <i class="bi bi-chevron-up icon-close"></i>
+                          </p>
+                          <div className="input-areas">
+                            <input
+                              type="text"
+                              // className="body-input"
+                              name="answers"
+                              placeholder="Your answer here..."
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div
+                          data-bs-toggle="collapse"
+                          href="#faq6"
+                          class="collapsed question"
+                        >
+                          <p>
+                            What resources or support are they relying on? How
+                            can CARE programme interventions best support these
+                            mechanisms?{" "}
+                            <i class="bi bi-chevron-down icon-show"></i>
+                            <i class="bi bi-chevron-up icon-close"></i>
+                          </p>
+
+                          <div className="input-areas">
+                            <input
+                              type="text"
+                              // className="body-input"
+                              name="answers"
+                              placeholder="Your answer here..."
+                            />
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button onClick={() => setNextCard(false)}>Go back</button>
                 </div>
-
-                <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      class="collapsed question"
-                      href="#faq1"
-                    >
-                      How are food items and non-food items accessed and
-                      controlled? <i class="bi bi-chevron-down icon-show"></i>
-                      <i class="bi bi-chevron-up icon-close"></i>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      href="#faq2"
-                      class="collapsed question"
-                    >
-                      What has changed since the crisis happened?{" "}
-                      <i class="bi bi-chevron-down icon-show"></i>
-                      <i class="bi bi-chevron-up icon-close"></i>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      href="#faq3"
-                      class="collapsed question"
-                    >
-                      What are the primary needs?{" "}
-                      <i class="bi bi-chevron-down icon-show"></i>
-                      <i class="bi bi-chevron-up icon-close"></i>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      href="#faq4"
-                      class="collapsed question"
-                    >
-                      What are the different vulnerabilities?{" "}
-                      <i class="bi bi-chevron-down icon-show"></i>
-                      <i class="bi bi-chevron-up icon-close"></i>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      href="#faq5"
-                      class="collapsed question"
-                    >
-                      What are yours different skills and capacities?
-                      <i class="bi bi-chevron-down icon-show"></i>
-                      <i class="bi bi-chevron-up icon-close"></i>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div
-                      data-bs-toggle="collapse"
-                      href="#faq6"
-                      class="collapsed question"
-                    >
-                      What resources or support are they relying on? How can
-                      CARE programme interventions best support these
-                      mechanisms? <i class="bi bi-chevron-down icon-show"></i>
-                      <i class="bi bi-chevron-up icon-close"></i>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              )}
             </section>
           </ul>
+          <div className="container translate-btn" data-aos="fade-up">
+            <Button
+              className="btn"
+              buttonStyle="btn-outline"
+              buttonSize="btn--small"
+              disabled={nextCard ? false : true}
+            >
+              Submit
+            </Button>
+          </div>
         </div>
       </div>
     </div>
