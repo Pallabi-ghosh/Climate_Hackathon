@@ -5,7 +5,7 @@ import { Button } from "./Button";
 function Cards() {
   return (
     <div className="cards">
-      <h1>Focus Group Discussion!</h1>
+      <h1>Focus Group Discussion Form</h1>
       <div className="cards__container">
         <div className="cards__wrapper">
           <ul className="cards__items">
