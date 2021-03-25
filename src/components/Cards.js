@@ -3,18 +3,23 @@ import "./Cards.css";
 import { Button } from "./Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import SubmitModal from "./SubmitModal";
 
 function Cards() {
   const [nextCard, setNextCard] = useState(false);
+  const [modal, setModal] = useState(false);
+  const hideModal = () => {
+    setModal(false);
+  };
   return (
     <div className="cards">
-      <ol class="faq-list" data-aos="fade-up" data-aos-delay="100">
+      <ol className="faq-list" data-aos="fade-up" data-aos-delay="100">
         <h2>Instruction for the interviewer</h2>
         <li>
           <div
             data-bs-toggle="collapse"
             href="#faq2"
-            class="collapsed question"
+            className="collapsed question"
           >
             Thank the informants for participating in interview.
           </div>
@@ -24,7 +29,7 @@ function Cards() {
           <div
             data-bs-toggle="collapse"
             href="#faq3"
-            class="collapsed question"
+            className="collapsed question"
           >
             Explain the objectives and expectations of the interview.
           </div>
@@ -34,7 +39,7 @@ function Cards() {
           <div
             data-bs-toggle="collapse"
             href="#faq4"
-            class="collapsed question"
+            className="collapsed question"
           >
             Outline the session and the amount of time the interview will take.
           </div>
@@ -44,7 +49,7 @@ function Cards() {
           <div
             data-bs-toggle="collapse"
             href="#faq5"
-            class="collapsed question"
+            className="collapsed question"
           >
             Obtain informed consent to record the interview and/or take
             pictures.
@@ -52,8 +57,7 @@ function Cards() {
         </li>
       </ol>
       <hr></hr>
-      <div>
-      </div>
+      <div></div>
       <div className="container translate-btn" data-aos="fade-up">
         <Button
           className="btn"
@@ -67,13 +71,17 @@ function Cards() {
       <div className="cards__container">
         <div className="cards__wrapper">
           <ul className="cards__items">
-            <section id="faq" class="faq section-bg">
+            <section id="faq" className="faq section-bg">
               {!nextCard ? (
                 <div>
-                  <div class="section-title">
+                  <div className="section-title">
                     <h2>Basic information</h2>
                   </div>
-                  <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
+                  <ul
+                    className="faq-list"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
                     <li>
                       <div className="collapsed" href="#faq1">
                         <label>Name:</label>
@@ -124,21 +132,21 @@ function Cards() {
                     <li>
                       <div className="collapsed" href="#faq1">
                         <label>Gender:</label>
-                        <label for="male">Male</label>
+                        <label htmlFor="male">Male</label>
                         <input
                           type="radio"
                           id="male"
                           name="gender"
                           value="male"
                         />
-                        <label for="female">Male</label>
+                        <label htmlFor="female">Male</label>
                         <input
                           type="radio"
                           id="female"
                           name="gender"
                           value="female"
                         />
-                        <label for="other">Other</label>
+                        <label htmlFor="other">Other</label>
                         <input
                           type="radio"
                           id="other"
@@ -146,20 +154,20 @@ function Cards() {
                           value="other"
                         />
                       </div>
-                      <div class="collapsed" href="#faq1">
+                      <div className="collapsed" href="#faq1">
                         <label htmlFor="age">Age:</label>
                         <input type="number" min="0" />
                       </div>
-                      <div class="collapsed" href="#faq1">
+                      <div className="collapsed" href="#faq1">
                         <label>Translation necessary for the interview:</label>
-                        <label for="yes">Yes</label>
+                        <label htmlFor="yes">Yes</label>
                         <input
                           type="radio"
                           id="yes"
                           name="translation"
                           value="yes"
                         />
-                        <label for="no">No</label>
+                        <label htmlFor="no">No</label>
                         <input
                           type="radio"
                           id="no"
@@ -170,20 +178,20 @@ function Cards() {
                     </li>
                   </ul>
 
-                  <div class="container" data-aos="fade-up">
-                    <div class="section-title">
+                  <div className="container" data-aos="fade-up">
+                    <div className="section-title">
                       <h2>Discussion Questions</h2>
                     </div>
 
                     <ul
-                      class="faq-list"
+                      className="faq-list"
                       data-aos="fade-up"
                       data-aos-delay="100"
                     >
                       <li>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed"
+                          className="collapsed"
                           href="#faq1"
                         >
                           <p>
@@ -203,20 +211,19 @@ function Cards() {
                     </ul>
                   </div>
                   <div className="collapsed" data-aos="fade-up">
-                    <div class="section-title">
+                    <div className="section-title">
                       <h2>Access to Resources</h2>
                     </div>
 
                     <ul
-                      class="faq-list"
+                      className="faq-list"
                       data-aos="fade-up"
                       data-aos-delay="100"
                     >
-                      
                       <li>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed"
+                          className="collapsed"
                           href="#faq1"
                         >
                           <label>Water: </label>
@@ -227,7 +234,7 @@ function Cards() {
                             name="water"
                             value="yes"
                           />
-                          <label type="yes" for="no">
+                          <label type="yes" htmlFor="no">
                             No
                           </label>
                           <input
@@ -239,11 +246,11 @@ function Cards() {
                         </div>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed"
+                          className="collapsed"
                           href="#faq1"
                         >
                           <label>Food: </label>
-                          <label type="yes" for="yes">
+                          <label type="yes" htmlFor="yes">
                             Yes
                           </label>
                           <input
@@ -252,18 +259,18 @@ function Cards() {
                             name="food"
                             value="yes"
                           />
-                          <label type="yes" for="no">
+                          <label type="yes" htmlFor="no">
                             No
                           </label>
                           <input type="radio" id="yes" name="food" value="no" />
                         </div>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed"
+                          className="collapsed"
                           href="#faq1"
                         >
                           <label>Clothes: </label>
-                          <label type="yes" for="yes">
+                          <label type="yes" htmlFor="yes">
                             Yes
                           </label>
                           <input
@@ -282,7 +289,7 @@ function Cards() {
                         </div>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed"
+                          className="collapsed"
                           href="#faq1"
                         >
                           <label>NFI Distributions: </label>
@@ -293,7 +300,7 @@ function Cards() {
                         </div>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed"
+                          className="collapsed"
                           href="#faq1"
                         >
                           <label>Health Services: </label>
@@ -319,20 +326,20 @@ function Cards() {
                 </div>
               ) : (
                 <div>
-                  <div class="container" data-aos="fade-up">
-                    <div class="section-title">
+                  <div className="container" data-aos="fade-up">
+                    <div className="section-title">
                       <h2>Additional Questions</h2>
                     </div>
 
                     <ul
-                      class="faq-list"
+                      className="faq-list"
                       data-aos="fade-up"
                       data-aos-delay="100"
                     >
                       <li>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed"
+                          className="collapsed"
                           href="#faq1"
                         >
                           <p>
@@ -355,12 +362,12 @@ function Cards() {
                         <div
                           data-bs-toggle="collapse"
                           href="#faq2"
-                          class="collapsed"
+                          className="collapsed"
                         >
                           <p>
                             What has changed since the crisis happened?{" "}
-                            <i class="bi bi-chevron-down icon-show"></i>
-                            <i class="bi bi-chevron-up icon-close"></i>
+                            <i className="bi bi-chevron-down icon-show"></i>
+                            <i className="bi bi-chevron-up icon-close"></i>
                           </p>
 
                           <div className="input-areas">
@@ -378,12 +385,12 @@ function Cards() {
                         <div
                           data-bs-toggle="collapse"
                           href="#faq3"
-                          class="collapsed"
+                          className="collapsed"
                         >
                           <p>
                             What are the primary needs?{" "}
-                            <i class="bi bi-chevron-down icon-show"></i>
-                            <i class="bi bi-chevron-up icon-close"></i>
+                            <i className="bi bi-chevron-down icon-show"></i>
+                            <i className="bi bi-chevron-up icon-close"></i>
                           </p>
                           <div className="input-areas">
                             <input
@@ -400,12 +407,12 @@ function Cards() {
                         <div
                           data-bs-toggle="collapse"
                           href="#faq4"
-                          class="collapsed"
+                          className="collapsed"
                         >
                           <p>
                             What are the different vulnerabilities?{" "}
-                            <i class="bi bi-chevron-down icon-show"></i>
-                            <i class="bi bi-chevron-up icon-close"></i>
+                            <i className="bi bi-chevron-down icon-show"></i>
+                            <i className="bi bi-chevron-up icon-close"></i>
                           </p>
 
                           <div className="input-areas">
@@ -423,12 +430,12 @@ function Cards() {
                         <div
                           data-bs-toggle="collapse"
                           href="#faq5"
-                          class="collapsed"
+                          className="collapsed"
                         >
                           <p>
                             What are yours different skills and capacities?
-                            <i class="bi bi-chevron-down icon-show"></i>
-                            <i class="bi bi-chevron-up icon-close"></i>
+                            <i className="bi bi-chevron-down icon-show"></i>
+                            <i className="bi bi-chevron-up icon-close"></i>
                           </p>
                           <div className="input-areas">
                             <input
@@ -445,14 +452,14 @@ function Cards() {
                         <div
                           data-bs-toggle="collapse"
                           href="#faq6"
-                          class="collapsed"
+                          className="collapsed"
                         >
                           <p>
                             What resources or support are they relying on? How
                             can CARE programme interventions best support these
                             mechanisms?{" "}
-                            <i class="bi bi-chevron-down icon-show"></i>
-                            <i class="bi bi-chevron-up icon-close"></i>
+                            <i className="bi bi-chevron-down icon-show"></i>
+                            <i className="bi bi-chevron-up icon-close"></i>
                           </p>
 
                           <div className="input-areas">
@@ -473,14 +480,13 @@ function Cards() {
             </section>
           </ul>
           <div className="container translate-btn" data-aos="fade-up">
-            <Button
-              className="btn"
-              buttonStyle="btn-outline"
-              buttonSize="btn--small"
-              disabled={nextCard ? false : true}
-            >
-              Submit
-            </Button>
+            <input
+              type="submit"
+              value="Submit"
+              disabled={!nextCard}
+              onClick={() => setModal(true)}
+            />
+            {modal ? <SubmitModal hideModal={hideModal} /> : <div></div>}
           </div>
         </div>
       </div>
