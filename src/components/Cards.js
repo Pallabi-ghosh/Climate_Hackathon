@@ -80,8 +80,8 @@ function Cards() {
                         <label htmlFor="name">Name (optional):</label>
                         <input type="text" placeholder="Your name..." />
                       </div>
-                      <div className="collapsed question" href="#faq1">
-                        <span>Geographic Location:</span>
+                      <div className="collapsed" href="#faq1">
+                        <label>Geographic Location:</label>
                         <select name="country" id="country">
                           <option value="">Select your country</option>
                           <option value="dk">Denmark</option>
@@ -102,9 +102,10 @@ function Cards() {
                         <label htmlFor="date">Interview date:</label>
                         <DatePicker
                           required
+                          className="date"
                           name="deadline"
                           minDate={new Date()}
-                          placeholderText="Pick a date"
+                          placeholderText="Date"
                         />
                       </div>
                       <div className="collapsed question" href="#faq1">
@@ -123,7 +124,7 @@ function Cards() {
                   >
                     <li>
                       <div className="collapsed question" href="#faq1">
-                        <span>Gender:</span>
+                        <label>Gender:</label>
                         <label for="male">Male</label>
                         <input
                           type="radio"
@@ -151,7 +152,7 @@ function Cards() {
                         <input type="number" min="0" />
                       </div>
                       <div class="collapsed question" href="#faq1">
-                        <span>Translation necessary for the interview:</span>
+                        <label>Translation necessary for the interview:</label>
                         <label for="yes">Yes</label>
                         <input
                           type="radio"
@@ -202,7 +203,7 @@ function Cards() {
                       </li>
                     </ul>
                   </div>
-                  <div class="container" data-aos="fade-up">
+                  <div className="container_collapse" data-aos="fade-up">
                     <div class="section-title">
                       <h2>Access to Resources</h2>
                     </div>
@@ -219,50 +220,63 @@ function Cards() {
                           class="collapsed question"
                           href="#faq1"
                         >
-                          <span>Water: </span>
-                          <label for="yes">Yes</label>
+                          <label>Water: </label>
+                          <label type="yes">Yes</label>
                           <input
                             type="radio"
                             id="yes"
                             name="water"
                             value="yes"
                           />
-                          <label for="no">No</label>
-                          <input type="radio" id="no" name="water" value="no" />
+                          <label type="yes" for="no">
+                            No
+                          </label>
+                          <input
+                            type="radio"
+                            id="yes"
+                            name="water"
+                            value="no"
+                          />
                         </div>
                         <div
                           data-bs-toggle="collapse"
                           class="collapsed question"
                           href="#faq1"
                         >
-                          <span>Food: </span>
-                          <label for="yes">Yes</label>
+                          <label>Food: </label>
+                          <label type="yes" for="yes">
+                            Yes
+                          </label>
                           <input
                             type="radio"
                             id="yes"
                             name="food"
                             value="yes"
                           />
-                          <label for="no">No</label>
-                          <input type="radio" id="no" name="food" value="no" />
+                          <label type="yes" for="no">
+                            No
+                          </label>
+                          <input type="radio" id="yes" name="food" value="no" />
                         </div>
                         <div
                           data-bs-toggle="collapse"
                           class="collapsed question"
                           href="#faq1"
                         >
-                          <span>Clothes: </span>
-                          <label for="yes">Yes</label>
+                          <label>Clothes: </label>
+                          <label type="yes" for="yes">
+                            Yes
+                          </label>
                           <input
                             type="radio"
                             id="yes"
                             name="clothes"
                             value="yes"
                           />
-                          <label for="no">No</label>
+                          <label type="yes">No</label>
                           <input
                             type="radio"
-                            id="no"
+                            id="yes"
                             name="clothes"
                             value="no"
                           />
@@ -272,29 +286,29 @@ function Cards() {
                           class="collapsed question"
                           href="#faq1"
                         >
-                          <span>NFI Distributions: </span>
-                          <label for="yes">Yes</label>
+                          <label>NFI Distributions: </label>
+                          <label type="yes">Yes</label>
                           <input type="radio" id="yes" name="nfi" value="yes" />
-                          <label for="no">No</label>
-                          <input type="radio" id="no" name="nfi" value="no" />
+                          <label type="yes">No</label>
+                          <input type="radio" id="yes" name="nfi" value="no" />
                         </div>
                         <div
                           data-bs-toggle="collapse"
                           class="collapsed question"
                           href="#faq1"
                         >
-                          <span>Health Services: </span>
-                          <label for="yes">Yes</label>
+                          <label>Health Services: </label>
+                          <label type="yes">Yes</label>
                           <input
                             type="radio"
                             id="yes"
                             name="health"
                             value="yes"
                           />
-                          <label for="no">No</label>
+                          <label type="yes">No</label>
                           <input
                             type="radio"
-                            id="no"
+                            id="yes"
                             name="health"
                             value="no"
                           />
@@ -459,7 +473,16 @@ function Cards() {
               )}
             </section>
           </ul>
-          <input type="submit" disabled={nextCard ? false : true} />
+          <div className="container translate-btn" data-aos="fade-up">
+            <Button
+              className="btn"
+              buttonStyle="btn-outline"
+              buttonSize="btn--small"
+              disabled={nextCard ? false : true}
+            >
+              Submit
+            </Button>
+          </div>
         </div>
       </div>
     </div>
