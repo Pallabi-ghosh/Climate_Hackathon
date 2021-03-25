@@ -459,6 +459,7 @@ function Cards() {
               )}
             </section>
           </ul>
+          <input type="submit" disabled={nextCard ? false : true} />
         </div>
       </div>
     </div>
