@@ -15,11 +15,11 @@ class SignUpContainer extends Component {
         username: "",
         email: "",
         password: "",
-        pwconfirm: ""
+        pwconfirm: "",
       },
       btnTxt: "show",
       type: "password",
-      score: "0"
+      score: "0",
     };
 
     this.pwMask = this.pwMask.bind(this);
@@ -35,7 +35,7 @@ class SignUpContainer extends Component {
     user[field] = event.target.value;
 
     this.setState({
-      user
+      user,
     });
   }
 
@@ -45,20 +45,20 @@ class SignUpContainer extends Component {
     user[field] = event.target.value;
 
     this.setState({
-      user
+      user,
     });
 
     if (event.target.value === "") {
-      this.setState(state =>
+      this.setState((state) =>
         Object.assign({}, state, {
-          score: "null"
+          score: "null",
         })
       );
     } else {
       var pw = zxcvbn(event.target.value);
-      this.setState(state =>
+      this.setState((state) =>
         Object.assign({}, state, {
-          score: pw.score + 1
+          score: pw.score + 1,
         })
       );
     }
@@ -68,18 +68,18 @@ class SignUpContainer extends Component {
     var params = { username: user.usr, password: user.pw, email: user.email };
     axios
       .post("https://ouramazingserver.com/api/signup/submit", params)
-      .then(res => {
+      .then((res) => {
         if (res.data.success === true) {
           localStorage.token = res.data.token;
           localStorage.isAuthenticated = true;
           window.location.reload();
         } else {
           this.setState({
-            errors: { message: res.data.message }
+            errors: { message: res.data.message },
           });
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log("Sign up data submit error: ", err);
       });
   }
@@ -89,28 +89,28 @@ class SignUpContainer extends Component {
     var payload = validateSignUpForm(this.state.user);
     if (payload.success) {
       this.setState({
-        errors: {}
+        errors: {},
       });
       var user = {
         usr: this.state.user.username,
         pw: this.state.user.password,
-        email: this.state.user.email
+        email: this.state.user.email,
       };
       this.submitSignup(user);
     } else {
       const errors = payload.errors;
       this.setState({
-        errors
+        errors,
       });
     }
   }
 
   pwMask(event) {
     event.preventDefault();
-    this.setState(state =>
+    this.setState((state) =>
       Object.assign({}, state, {
         type: this.state.type === "password" ? "input" : "password",
-        btnTxt: this.state.btnTxt === "show" ? "hide" : "show"
+        btnTxt: this.state.btnTxt === "show" ? "hide" : "show",
       })
     );
   }
