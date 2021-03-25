@@ -30,7 +30,7 @@ function Navbar() {
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <img
-            // eslint-disable-next-line
+              // eslint-disable-next-line
               src="/images/logo.png"
               width="200"
               height="65"
@@ -48,20 +48,20 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link
-                to="/services"
+                to="/report"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Services
+                Report
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                to="/products"
+                to="/sponsor"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Products
+                Sponsor
               </Link>
             </li>
 
