@@ -31,10 +31,9 @@ function Navbar() {
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <img
               src="/images/logo.png"
-              width="150"
-              height="60"
+              width="200"
+              height="65"
               className="d-inline-block align-top"
-              alt="React Bootstrap logo"
             />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
