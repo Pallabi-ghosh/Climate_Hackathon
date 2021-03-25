@@ -64,11 +64,16 @@ function Footer() {
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-              Care
-              <i class='fab fa-typo3' />
+            <img
+              src="/images/logo.png"
+              width="150"
+              height="60"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
             </Link>
           </div>
-          <small class='website-rights'>Care © 2020</small>
+          <small class='website-rights'>PlanBørnefonden © 2020</small>
           <div class='social-icons'>
             <Link
               class='social-icon-link facebook'

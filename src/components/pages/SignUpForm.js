@@ -30,6 +30,7 @@ const SignUpForm = ({
           onChange={onChange}
           errorText={errors.username}
         />
+        
         <TextField
           name="email"
           floatingLabelText="email"
