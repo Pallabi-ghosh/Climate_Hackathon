@@ -8,7 +8,6 @@ function Cards() {
   const [nextCard, setNextCard] = useState(false);
   return (
     <div className="cards">
-      <h1>Focus Group Discussion!</h1>
       <ol class="faq-list" data-aos="fade-up" data-aos-delay="100">
         <h2>Instruction for the interviewer</h2>
         <li>
@@ -54,7 +53,6 @@ function Cards() {
       </ol>
       <hr></hr>
       <div>
-        <h2>Please fill out the form</h2>
       </div>
       <div className="container translate-btn" data-aos="fade-up">
         <Button
@@ -77,14 +75,14 @@ function Cards() {
                   </div>
                   <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
                     <li>
-                      <div className="collapsed question" href="#faq1">
-                        <label htmlFor="name">Name (optional):</label>
+                      <div className="collapsed" href="#faq1">
+                        <label>Name:</label>
                         <input type="text" placeholder="Your name..." />
                       </div>
                       <div className="collapsed" href="#faq1">
                         <label>Geographic Location:</label>
                         <select name="country" id="country">
-                          <option value="">Select your country</option>
+                          <option value="">Country</option>
                           <option value="dk">Denmark</option>
                           <option value="se">Sweden</option>
                           <option value="no">Norway</option>
@@ -99,7 +97,7 @@ function Cards() {
                     data-aos-delay="100"
                   >
                     <li>
-                      <div className="collapsed question" href="#faq1">
+                      <div className="collapsed" href="#faq1">
                         <label htmlFor="date">Interview date:</label>
                         <DatePicker
                           required
@@ -109,7 +107,7 @@ function Cards() {
                           placeholderText="Date"
                         />
                       </div>
-                      <div className="collapsed question" href="#faq1">
+                      <div className="collapsed" href="#faq1">
                         <label htmlFor="place">Place of interview:</label>
                         <input
                           type="text"
@@ -124,7 +122,7 @@ function Cards() {
                     data-aos-delay="100"
                   >
                     <li>
-                      <div className="collapsed question" href="#faq1">
+                      <div className="collapsed" href="#faq1">
                         <label>Gender:</label>
                         <label for="male">Male</label>
                         <input
@@ -148,11 +146,11 @@ function Cards() {
                           value="other"
                         />
                       </div>
-                      <div class="collapsed question" href="#faq1">
+                      <div class="collapsed" href="#faq1">
                         <label htmlFor="age">Age:</label>
                         <input type="number" min="0" />
                       </div>
-                      <div class="collapsed question" href="#faq1">
+                      <div class="collapsed" href="#faq1">
                         <label>Translation necessary for the interview:</label>
                         <label for="yes">Yes</label>
                         <input
@@ -185,7 +183,7 @@ function Cards() {
                       <li>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed question"
+                          class="collapsed"
                           href="#faq1"
                         >
                           <p>
@@ -204,7 +202,7 @@ function Cards() {
                       </li>
                     </ul>
                   </div>
-                  <div className="container_collapse" data-aos="fade-up">
+                  <div className="collapsed" data-aos="fade-up">
                     <div class="section-title">
                       <h2>Access to Resources</h2>
                     </div>
@@ -214,11 +212,11 @@ function Cards() {
                       data-aos="fade-up"
                       data-aos-delay="100"
                     >
-                      <p>Resources : Yes or No</p>
+                      
                       <li>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed question"
+                          class="collapsed"
                           href="#faq1"
                         >
                           <label>Water: </label>
@@ -241,7 +239,7 @@ function Cards() {
                         </div>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed question"
+                          class="collapsed"
                           href="#faq1"
                         >
                           <label>Food: </label>
@@ -261,7 +259,7 @@ function Cards() {
                         </div>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed question"
+                          class="collapsed"
                           href="#faq1"
                         >
                           <label>Clothes: </label>
@@ -284,7 +282,7 @@ function Cards() {
                         </div>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed question"
+                          class="collapsed"
                           href="#faq1"
                         >
                           <label>NFI Distributions: </label>
@@ -295,7 +293,7 @@ function Cards() {
                         </div>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed question"
+                          class="collapsed"
                           href="#faq1"
                         >
                           <label>Health Services: </label>
@@ -334,7 +332,7 @@ function Cards() {
                       <li>
                         <div
                           data-bs-toggle="collapse"
-                          class="collapsed question"
+                          class="collapsed"
                           href="#faq1"
                         >
                           <p>
@@ -357,7 +355,7 @@ function Cards() {
                         <div
                           data-bs-toggle="collapse"
                           href="#faq2"
-                          class="collapsed question"
+                          class="collapsed"
                         >
                           <p>
                             What has changed since the crisis happened?{" "}
@@ -380,7 +378,7 @@ function Cards() {
                         <div
                           data-bs-toggle="collapse"
                           href="#faq3"
-                          class="collapsed question"
+                          class="collapsed"
                         >
                           <p>
                             What are the primary needs?{" "}
@@ -402,7 +400,7 @@ function Cards() {
                         <div
                           data-bs-toggle="collapse"
                           href="#faq4"
-                          class="collapsed question"
+                          class="collapsed"
                         >
                           <p>
                             What are the different vulnerabilities?{" "}
@@ -425,7 +423,7 @@ function Cards() {
                         <div
                           data-bs-toggle="collapse"
                           href="#faq5"
-                          class="collapsed question"
+                          class="collapsed"
                         >
                           <p>
                             What are yours different skills and capacities?
@@ -447,7 +445,7 @@ function Cards() {
                         <div
                           data-bs-toggle="collapse"
                           href="#faq6"
-                          class="collapsed question"
+                          class="collapsed"
                         >
                           <p>
                             What resources or support are they relying on? How

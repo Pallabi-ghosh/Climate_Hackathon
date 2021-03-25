@@ -30,6 +30,7 @@ function Navbar() {
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <img
+            // eslint-disable-next-line
               src="/images/logo.png"
               width="200"
               height="65"

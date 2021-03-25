@@ -7,7 +7,10 @@
 
 h2 {
   margin: 2% auto;
+  font-size: 25px;
 }
+
+
 
 hr {
   margin: 3% auto 1%;
@@ -109,7 +112,7 @@ input[type=number], select {
 # F.A.Q
 --------------------------------------------------------------*/
 .faq {
-  padding: 60px 0;
+  padding: 0px 0;
 }
 
 .section-title {
@@ -131,7 +134,7 @@ input[type=number], select {
 .faq .faq-list .question {
   display: block;
   position: relative;
-  font-family: #4c91ad;
+  font-family: #0172ce;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
