@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
   try {
     console.log("working")
     const interviews = await knex("interviews")
-    res.json("interviews should go here")
+    res.json(interviews)
   } catch (error) {
     throw error
   }
