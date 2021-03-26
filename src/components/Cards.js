@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 function Cards() {
   const [nextCard, setNextCard] = useState(false);
   return (
-    <div className="cards">
+    <div className= 'cards'>
       <ol class="faq-list" data-aos="fade-up" data-aos-delay="100">
         <h2>Instruction for the interviewer</h2>
         <li>
@@ -65,7 +65,7 @@ function Cards() {
       </div>
       <h1>Focus Group Discussion Form</h1>
       <div className="cards__container">
-        <div className="cards__wrapper">
+        <div className="cards__wrapper" >
           <ul className="cards__items">
             <section id="faq" class="faq section-bg">
               {!nextCard ? (
@@ -315,7 +315,7 @@ function Cards() {
                       </li>
                     </ul>
                   </div>
-                  <button onClick={() => setNextCard(true)}>Next page</button>
+                  <button className="translate" onClick={() => setNextCard(true)}>Next page</button>
                 </div>
               ) : (
                 <div>
@@ -467,7 +467,7 @@ function Cards() {
                       </li>
                     </ul>
                   </div>
-                  <button onClick={() => setNextCard(false)}>Go back</button>
+                  <button className="translate" onClick={() => setNextCard(false)}>Go back</button>
                 </div>
               )}
             </section>

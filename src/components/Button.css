@@ -25,10 +25,10 @@
 }
 
 .btn-outline {
-  background-color: rgb(17, 131, 224);
+  background-color: rgb(0, 140, 255);
   color: #fff;
   padding: 8px 20px;
-  border: 2px solid rgb(17, 131, 224);
+  border: 2px solid rgb(0, 140, 255);
   transition: all 0.3s ease-out;
   margin: 20px;
 }
@@ -47,6 +47,6 @@
 .btn--medium:hover {
   transition: all 0.3s ease-out;
   background: #fff;
-  color: #0172ce;
+  color: #058eff;
   transition: 250ms;
 }
