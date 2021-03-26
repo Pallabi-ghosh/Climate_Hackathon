@@ -42,8 +42,12 @@ body {
   margin: 5% auto;
 }
 
-.img-report img {
-  width: 90%;
+.img-flexbox img {
+  width: 40%;
+}
+
+.larger img {
+  width: 50%;
 }
 
 form {
