@@ -480,16 +480,12 @@ function Cards() {
             </section>
           </ul>
           <div className="container translate-btn" data-aos="fade-up">
-            <Button
-              className="btn"
-              buttonStyle="btn-outline"
-              buttonSize="btn--primary"
+          <input
+              type="submit"
               value="Submit"
               disabled={!nextCard}
               onClick={() => setModal(true)}
-            >
-              Submit
-            </Button>
+            />
             {modal ? <SubmitModal hideModal={hideModal} /> : <div></div>}
           </div>
         </div>
