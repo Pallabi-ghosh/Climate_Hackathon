@@ -1,4 +1,4 @@
-Automation tool & impact analysis for PlanBørnefonden challenge, part of the Climate Hachathon hosted by Stratiteq and Microsoft.
+Automation tool & impact analysis for PlanBørnefonden challenge, part of the Climate Hackathon hosted by Stratiteq and Microsoft.
 
 Understand the people's needs, resources and capacities as fast and thoroughly as possible. When a disaster occurs, humanitarian organizations have hard time collecting and analyzing data to understand the needs of the affected people in a fast way, so they can have a fast response and send help to the needed ones in the needed areas.
 
